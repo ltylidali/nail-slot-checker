@@ -12,9 +12,10 @@ async def check_slots():
         await page.wait_for_load_state("networkidle")
 
         # 点击第一个菜单
-        await page.click(f"label[for='{MENU_IDS[0]}']")         
+        await page.click(f"label[for='{MENU_IDS[0]}']")  
+               
         print(f"点击了 {MENU_IDS[0]}")
-        
+        await page.click("a.nextButton")        
         await page.screenshot(path="debug.png")
         print("截图已保存！")
         
