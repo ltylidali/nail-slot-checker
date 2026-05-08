@@ -19,6 +19,9 @@ async def check_slots():
         await page.click("a.nextButton")
         await page.wait_for_load_state("networkidle")        
         await page.screenshot(path="debug.png")
+        await page.click("a.nominationBtn")
+        await page.wait_for_load_state("networkidle")
+        await page.screenshot(path="debug.png")
         print("截图已保存！")
         
         await asyncio.sleep(3)
